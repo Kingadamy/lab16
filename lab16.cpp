@@ -6,14 +6,17 @@
 using namespace std;
 
 // create the class here
-class color {
+class Color {
 private:
-    int red;
-    int green;
-    int blue;
+    int r;
+    int g;
+    int b;
 
     // now we must call for these using getters and setters
     public:
+    Color() { r = 0; g = 0; b = 0; } // default constructor
+    Color(int red) {r = red; g = 0; b = 0;} // parital constructor
+
     int getRed() { return red; }
     void setRed(int r) { red = r; }
 
@@ -36,20 +39,20 @@ private:
 
 
 int main() {
-    color c1;
+    Color c1;
     c1.setRed(365);
     c1.setGreen(56);
     c1.setBlue(7);
     c1.print();
 
 
-    color c2;
+    Color c2;
     c2.setRed(123);
     c2.setGreen(454);
     c2.setBlue(29);
     c2.print();
 
-    color c3;
+    Color c3;
     c3.setRed(456);
     c3.setGreen(234);
     c3.setBlue(234);

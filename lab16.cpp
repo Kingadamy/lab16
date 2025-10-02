@@ -16,23 +16,24 @@ private:
     public:
     Color() { r = 0; g = 0; b = 0; } // default constructor
     Color(int red) {r = red; g = 0; b = 0;} // parital constructor
+    Color(int red, int green, int blue) {r = red; g = green; b = blue;} // full constructor
 
-    int getRed() { return red; }
-    void setRed(int r) { red = r; }
+    int getRed() { return r; }
+    void setRed(int rd) { r = rd; }
 
-    int getGreen() { return green; }
-    void setGreen(int g) { green = g; }
+    int getGreen() { return g; }
+    void setGreen(int gr) { g = gr; }
 
-    int getBlue() { return blue; }
-    void setBlue(int b) { blue = b; }
+    int getBlue() { return b; }
+    void setBlue(int bl) { b = bl; }
 
 
 // this is to print the values
 
     void print() { 
-    cout << setw(15) << "Red: " << red << endl;
-    cout << setw(15) << "Green: " << green << endl;
-    cout << setw(15) << "Blue: " << blue << endl;
+    cout << setw(15) << "Red: " << r << endl;
+    cout << setw(15) << "Green: " << g << endl;
+    cout << setw(15) << "Blue: " << b << endl;
 }
 
 };
@@ -40,23 +41,18 @@ private:
 
 int main() {
     Color c1;
-    c1.setRed(365);
-    c1.setGreen(56);
-    c1.setBlue(7);
+    cout << c1.getRed() << " " << c1. getGreen() << " " << c1.getBlue() << endl; // prints default constructor
     c1.print();
 
 
-    Color c2;
-    c2.setRed(123);
-    c2.setGreen(454);
-    c2.setBlue(29);
+    Color c2(150); // call partial constructor here (only red value because thats what we passed in)
+    cout << c2. getGreen() << " " << c2.getBlue() << endl; 
     c2.print();
+    cout << endl;
 
-    Color c3;
-    c3.setRed(456);
-    c3.setGreen(234);
-    c3.setBlue(234);
+    Color c3 (100, 200, 230); // call full constructor here
     c3.print();
+    cout << endl;
 
     return 0;
 
